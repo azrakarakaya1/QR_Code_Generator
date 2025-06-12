@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code Generator</title>    
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            box-sizing: border-box;
+        }
+        body {
+            background: linear-gradient(135deg, #2c3e50, #34495e, #2c3e50);
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container {
+            width: 400px;
+            padding: 30px 40px;
+            background-color: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease-in-out;
+        }
+        .container p {
+            margin-top: 10px;
+            font-weight: 600;
+            font-size: 20px;
+            margin-bottom: 8px;
+            color: #2c3e50;
+        }
+        .container input {
+            width: 100%;
+            height: 45px;
+            border: 1px solid #ccc;
+            outline: none;
+            padding: 10px;
+            margin: 8px 0 15px;
+            border-radius: 6px;
+            font-size: 16px;
+            background-color: #f9f9f9;
+            transition: border-color 0.2s;
+        }
+        .container input:focus {
+            border-color: #2980b9;
+            background-color: #ffffff;
+        }
+        .container button {
+            width: 100%;
+            height: 50px;
+            background: linear-gradient(to right, #f39c12, #f1c40f);
+            color: #fff;
+            border: none;
+            outline: none;
+            border-radius: 6px;
+            box-shadow: 0 8px 15px rgba(243, 156, 18, 0.3);
+            cursor: pointer;
+            margin: 20px 0;
+            font-weight: 600;
+            font-size: 16px;
+            transition: background 0.3s ease;
+        }
+        .container button:hover {
+            background: linear-gradient(to right, #e67e22, #f39c12);
+        }
+        .container img {
+            width: 65%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <p>Enter a text or URL</p>
+        <input type="text" placeholder="text/url" id="qrInput">
+        <div id="imageBox">
+            <img src="" id="qrImage">
+        </div>
+        <button onclick="generateQR()">Generate QR Code</button>
+    </div>
+
+    <script>
+        let imageBox = document.getElementById("imageBox");
+        let qrImage = document.getElementById("qrImage");
+        let qrInput = document.getElementById("qrInput");
+
+        function generateQR() {
+            qrImage.src = "https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=" + qrInput.value;
+        }
+    </script>
+</body>
+</html>
