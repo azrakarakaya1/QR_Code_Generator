@@ -15,7 +15,7 @@ A simple and stylish web-based QR Code generator built using **HTML**, **CSS**, 
 
 ## Live Preview
 
-[QR Code Generator](https://azrakarakaya1.github.io/QRcode_generator/) hosted via GitHub Pages
+[QR Code Generator](https://azrakarakaya1.github.io/QR_Code_Generator/) hosted via GitHub Pages
 
 ---
 
